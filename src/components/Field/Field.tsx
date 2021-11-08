@@ -23,18 +23,16 @@ export default class Field extends Component<{}, FieldState> {
       columnNumber: 0,
       rowNumber: 0,
     };
-    this.setLocation = this.setLocation.bind(this);
-    this.getLocation = this.getLocation.bind(this);
   }
 
-  setLocation(columnNumber: number, rowNumber: number): void {
+  setLocation = (columnNumber: number, rowNumber: number): void => {
     this.setState({ columnNumber });
     this.setState({ rowNumber });
-  }
+  };
 
-  getLocation(): string {
-    return `[${this.state.columnNumber}] [ ${this.state.rowNumber}]`;
-  }
+  getLocation = (): string => {
+    return `[${this.state.columnNumber}] [${this.state.rowNumber}]`;
+  };
 
   render() {
     const cells = this.state.data.map((row: number[], columnIndex: number) => {
