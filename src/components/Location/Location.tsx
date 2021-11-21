@@ -4,6 +4,11 @@ export default class Location extends Component<{ location: string }> {
   constructor(props: { location: string }) {
     super(props);
   }
+
+  shouldComponentUpdate(nextProps: { location: string }): boolean {
+    return nextProps.location !== this.props.location;
+  }
+
   render() {
     return <div>Позиция нажатого квадратика - {this.props.location}</div>;
   }

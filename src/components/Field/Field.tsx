@@ -23,16 +23,46 @@ export default class Field extends Component<{}, FieldState> {
       columnNumber: 0,
       rowNumber: 0,
     };
+    this.setLocation = this.setLocation.bind(this);
+    this.getLocation = this.getLocation.bind(this);
   }
 
-  setLocation = (columnNumber: number, rowNumber: number): void => {
+  setLocation(columnNumber: number, rowNumber: number): void {
     this.setState({ columnNumber });
     this.setState({ rowNumber });
-  };
+  }
 
-  getLocation = (): string => {
+  getLocation(): string {
     return `[${this.state.columnNumber}] [${this.state.rowNumber}]`;
-  };
+  }
+
+  componentDidMount() {
+    console.log(
+      "Field componentDidMount ; Координаты ячейки - " + this.getLocation()
+    );
+  }
+
+  componentDidUpdate() {
+    if (this.getLocation() === "[4] [4]") {
+      const row1 = [0, 1, 0, 0, 1];
+      const row2 = [0, 1, 0, 0, 1];
+      const row3 = [0, 0, 0, 1, 1];
+      const row4 = [1, 0, 1, 0, 1];
+      const row5 = [0, 0, 0, 0, 1];
+      const row6 = [0, 0, 0, 0, 1];
+      const row7 = [0, 1, 1, 0, 0];
+
+      this.setState({
+        data: [row1, row2, row3, row4, row5, row6, row7],
+        columnNumber: 0,
+        rowNumber: 0,
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("Field componentWillUnmount");
+  }
 
   render() {
     const cells = this.state.data.map((row: number[], columnIndex: number) => {
