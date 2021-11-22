@@ -4,6 +4,7 @@
   "description": "React App",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode=production --node-env=production",
     "test": "jest",
     "start": "npx webpack-dev-server --mode development --open --hot",
     "eslint": "eslint",
