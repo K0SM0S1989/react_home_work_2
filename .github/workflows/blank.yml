@@ -36,7 +36,7 @@ jobs:
 
       # Run build
       - name: Build
-        run: npm run build
+        run: npm run start
 
       # Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
