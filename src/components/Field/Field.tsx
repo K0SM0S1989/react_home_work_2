@@ -44,16 +44,14 @@ export default class Field extends Component<{}, FieldState> {
 
   componentDidUpdate() {
     if (this.getLocation() === "[4] [4]") {
-      const row1 = [0, 1, 0, 0, 1];
-      const row2 = [0, 1, 0, 0, 1];
-      const row3 = [0, 0, 0, 1, 1];
-      const row4 = [1, 0, 1, 0, 1];
-      const row5 = [0, 0, 0, 0, 1];
-      const row6 = [0, 0, 0, 0, 1];
-      const row7 = [0, 1, 1, 0, 0];
-
+      const oldData = this.state.data;
+      const row1 = [0, 0, 0, 0, 1];
+      const row2 = [0, 1, 1, 0, 0];
+      const newData = oldData;
+      newData.push(row1);
+      newData.push(row2);
       this.setState({
-        data: [row1, row2, row3, row4, row5, row6, row7],
+        data: newData,
         columnNumber: 0,
         rowNumber: 0,
       });
