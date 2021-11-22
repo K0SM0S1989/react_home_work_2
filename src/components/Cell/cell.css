@@ -1,0 +1,11 @@
+.cell_off {
+    background-color: black;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    border: 1px solid grey;
+}
+
+.cell_on {
+    background-color: green;
+}
