@@ -1,0 +1,8 @@
+.idea
+node_modules
+src/**.js
+src/**/**/**.js
+src/**/**/**.map
+src/**.map
+dist
+build-storybook.log
