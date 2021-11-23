@@ -13,13 +13,14 @@ interface FieldState {
 export default class Field extends Component<{}, FieldState> {
   constructor(props: never) {
     super(props);
-    const row1 = [0, 1, 0, 0, 1];
-    const row2 = [0, 1, 0, 0, 1];
-    const row3 = [0, 0, 0, 1, 1];
-    const row4 = [1, 0, 1, 0, 1];
-    const row5 = [0, 0, 0, 0, 1];
     this.state = {
-      data: [row1, row2, row3, row4, row5],
+      data: [
+        [0, 1, 0, 0, 1],
+        [0, 1, 0, 0, 1],
+        [0, 0, 0, 1, 1],
+        [1, 0, 1, 0, 1],
+        [0, 0, 0, 0, 1],
+      ],
       columnNumber: 0,
       rowNumber: 0,
     };
